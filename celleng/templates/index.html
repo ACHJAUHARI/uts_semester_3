@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+<!-- {% load static %} -->
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <img src="{% static 'img/logo.jpg'%}" alt="Deskripsi Gambar" class="img-thumbnail rounded" width="150px">
+      <h1 class="font-style">Songkok Celleng</h1>
+      <p class="lead">Deskripsi Jumbotron</p>
+    </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    {% for ceo in ceos %}
+    <div class="col-3">
+      <div class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">{{ ceo.name }}</h5>
+          <p class="card-text">{{ ceo.keterangan }}</p>
+          <a href="#" class="btn btn-primary">Kepoin Yuk</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+  
